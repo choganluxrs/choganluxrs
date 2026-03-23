@@ -1761,7 +1761,7 @@
     </footer>
 
     <script>
-                // LOADER
+                        // LOADER
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
@@ -1791,6 +1791,69 @@
                 faqItem.classList.add('active');
             }
         }
+
+        // MAPPING BOJA ZA LUKSUZNE PARFEME
+        const bojeLuksuzni = {
+            'Crni': [74, 75, 102, 130, 134, 138],
+            'Beli': [101, 109, 111, 112, 123, 137, 139, 143, 144],
+            'Zlatni': [106, 117, 124, 126, 127, 128, 141],
+            'Plavi': [125, 129],
+            'Crveni': [118, 146]
+        };
+
+        // FUNKCIJA ZA DOBIJANJE BOJE PARFEMA
+        function getBojaParfema(id) {
+            for (const [boja, brojevi] of Object.entries(bojeLuksuzni)) {
+                if (brojevi.includes(id)) return boja;
+            }
+            return 'Zlatni'; // default
+        }
+
+        // TVOJE SLIKE SA GITHUBA
+        const baseUrl = 'https://raw.githubusercontent.com/choganluxrs/choganluxrs/main/images/';
+
+        const getPerfumeImage = (category, id, name) => {
+            // Event parfemi - posebne slike
+            if (category === 'Event') {
+                const eventImages = {
+                    'Nadir': 'Nadir.jpg',
+                    'Multiverse': 'Multiverse.png',
+                    'Event 22': 'Event%2022.jpg',
+                    'Event23M': 'Event23M.jpg',
+                    'Event23W': 'Event23W.jpg',
+                    'Imperatrix': 'Imperatrix.jpg',
+                    'Astral': 'Astral.jpg'
+                };
+                
+                // Pronađi ime event parfema
+                const eventName = Object.keys(eventImages).find(key => name.includes(key));
+                if (eventName) {
+                    return baseUrl + eventImages[eventName];
+                }
+                return baseUrl + 'Astral.jpg'; // fallback
+            }
+            
+            // Luksuzni parfemi - po bojama
+            if (category === 'Luksuzni') {
+                const boja = getBojaParfema(id);
+                const bojaFiles = {
+                    'Crni': 'Crni.jpg',
+                    'Beli': 'Beli.jpg',
+                    'Zlatni': 'Zlatni.png',
+                    'Plavi': 'Plavi.png',
+                    'Crveni': 'Crveni.jpg'
+                };
+                return baseUrl + bojaFiles[boja];
+            }
+            
+            // Muški i Unisex
+            if (category === 'Muški' || category === 'Muški Premium' || category === 'Unisex') {
+                return baseUrl + 'Muski%20parfem.png';
+            }
+            
+            // Ženski (default)
+            return baseUrl + 'Zenski%20parfem.png';
+        };
 
         // SVI PARFEMI SA TVOJE LISTE
         const perfumes = [
@@ -1913,100 +1976,47 @@
             { id: 142, name: "Chogan 142", inspiration: "Ombre Leather", category: "Unisex", price30: "27€", price70: "52€", hasRefill: true },
             { id: 155, name: "Chogan 155", inspiration: "CK One", category: "Unisex", price30: "18€", price70: "35€", hasRefill: true },
 
-            // LUKSUZNI 50ml (52€)
-            { id: 74, name: "Chogan 074", inspiration: "Black Afgano", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 75, name: "Chogan 075", inspiration: "X for Men", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 101, name: "Chogan 101", inspiration: "Velvet Amber Skin", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 102, name: "Chogan 102", inspiration: "Velvet Amber Sun", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 106, name: "Chogan 106", inspiration: "Fucking Fabulous", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 109, name: "Chogan 109", inspiration: "J'adore L'Or", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 111, name: "Chogan 111", inspiration: "Lost Cherry", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 112, name: "Chogan 112", inspiration: "Neroli Portofino", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 117, name: "Chogan 117", inspiration: "Tobacco Vanille", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 118, name: "Chogan 118", inspiration: "Baccarat Rouge 540", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 123, name: "Chogan 123", inspiration: "Good Girl Gone Bad", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 124, name: "Chogan 124", inspiration: "Zeta", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 125, name: "Chogan 125", inspiration: "Sole di Positano", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 126, name: "Chogan 126", inspiration: "Soleil Blanc", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 127, name: "Chogan 127", inspiration: "Oud Wood", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 128, name: "Chogan 128", inspiration: "Vanille Fatale", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 129, name: "Chogan 129", inspiration: "Erba Pura", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 134, name: "Chogan 134", inspiration: "Bitter Peach", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 137, name: "Chogan 137", inspiration: "Naxos", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 138, name: "Chogan 138", inspiration: "Whisper Sandal Wood", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 143, name: "Chogan 143", inspiration: "Vanilla Powder", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 144, name: "Chogan 144", inspiration: "Bianco Latte", category: "Luksuzni", price50: "52€", hasRefill: false },
-            { id: 146, name: "Chogan 146", inspiration: "Rouge Pierre", category: "Luksuzni", price50: "52€", hasRefill: false },
-
-            // LUKSUZNI 50ml (65€)
-            { id: 130, name: "Chogan 130", inspiration: "Megamare", category: "Luksuzni", price50: "65€", hasRefill: false },
-            { id: 139, name: "Chogan 139", inspiration: "Les Sables Roses", category: "Luksuzni", price50: "65€", hasRefill: false },
-            { id: 141, name: "Chogan 141", inspiration: "Dubai Turath", category: "Luksuzni", price50: "65€", hasRefill: false },
+            // LUKSUZNI 50ml (52€ i 65€)
+            { id: 74, name: "Chogan 074", inspiration: "Black Afgano", category: "Luksuzni", price50: "52€", boja: "Crni" },
+            { id: 75, name: "Chogan 075", inspiration: "X for Men", category: "Luksuzni", price50: "52€", boja: "Crni" },
+            { id: 102, name: "Chogan 102", inspiration: "Velvet Amber Sun", category: "Luksuzni", price50: "52€", boja: "Crni" },
+            { id: 130, name: "Chogan 130", inspiration: "Megamare", category: "Luksuzni", price50: "65€", boja: "Crni" },
+            { id: 134, name: "Chogan 134", inspiration: "Bitter Peach", category: "Luksuzni", price50: "52€", boja: "Crni" },
+            { id: 138, name: "Chogan 138", inspiration: "Whisper Sandal Wood", category: "Luksuzni", price50: "52€", boja: "Crni" },
+            
+            { id: 101, name: "Chogan 101", inspiration: "Velvet Amber Skin", category: "Luksuzni", price50: "52€", boja: "Beli" },
+            { id: 109, name: "Chogan 109", inspiration: "J'adore L'Or", category: "Luksuzni", price50: "52€", boja: "Beli" },
+            { id: 111, name: "Chogan 111", inspiration: "Lost Cherry", category: "Luksuzni", price50: "52€", boja: "Beli" },
+            { id: 112, name: "Chogan 112", inspiration: "Neroli Portofino", category: "Luksuzni", price50: "52€", boja: "Beli" },
+            { id: 123, name: "Chogan 123", inspiration: "Good Girl Gone Bad", category: "Luksuzni", price50: "52€", boja: "Beli" },
+            { id: 137, name: "Chogan 137", inspiration: "Naxos", category: "Luksuzni", price50: "52€", boja: "Beli" },
+            { id: 139, name: "Chogan 139", inspiration: "Les Sables Roses", category: "Luksuzni", price50: "65€", boja: "Beli" },
+            { id: 143, name: "Chogan 143", inspiration: "Vanilla Powder", category: "Luksuzni", price50: "52€", boja: "Beli" },
+            { id: 144, name: "Chogan 144", inspiration: "Bianco Latte", category: "Luksuzni", price50: "52€", boja: "Beli" },
+            
+            { id: 106, name: "Chogan 106", inspiration: "Fucking Fabulous", category: "Luksuzni", price50: "52€", boja: "Zlatni" },
+            { id: 117, name: "Chogan 117", inspiration: "Tobacco Vanille", category: "Luksuzni", price50: "52€", boja: "Zlatni" },
+            { id: 124, name: "Chogan 124", inspiration: "Zeta", category: "Luksuzni", price50: "52€", boja: "Zlatni" },
+            { id: 126, name: "Chogan 126", inspiration: "Soleil Blanc", category: "Luksuzni", price50: "52€", boja: "Zlatni" },
+            { id: 127, name: "Chogan 127", inspiration: "Oud Wood", category: "Luksuzni", price50: "52€", boja: "Zlatni" },
+            { id: 128, name: "Chogan 128", inspiration: "Vanille Fatale", category: "Luksuzni", price50: "52€", boja: "Zlatni" },
+            { id: 141, name: "Chogan 141", inspiration: "Dubai Turath", category: "Luksuzni", price50: "65€", boja: "Zlatni" },
+            
+            { id: 125, name: "Chogan 125", inspiration: "Sole di Positano", category: "Luksuzni", price50: "52€", boja: "Plavi" },
+            { id: 129, name: "Chogan 129", inspiration: "Erba Pura", category: "Luksuzni", price50: "52€", boja: "Plavi" },
+            
+            { id: 118, name: "Chogan 118", inspiration: "Baccarat Rouge 540", category: "Luksuzni", price50: "52€", boja: "Crveni" },
+            { id: 146, name: "Chogan 146", inspiration: "Rouge Pierre", category: "Luksuzni", price50: "52€", boja: "Crveni" },
 
             // EVENT 50ml (60€)
-            { id: 'Nadir', name: "Chogan Nadir", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
-            { id: 'Imperatrix', name: "Chogan Imperatrix", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
-            { id: 'Astral', name: "Chogan Astral", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
-            { id: 'Multiverse', name: "Chogan Multiverse", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
-            { id: 'Event23M', name: "Chogan Event 23M", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
-            { id: 'Event23W', name: "Chogan Event 23W", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
-            { id: 'Event22', name: "Chogan Event 22", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false }
+            { id: 'Nadir', name: "Chogan Nadir", inspiration: "Event Exclusive", category: "Event", price50: "60€", slika: "Nadir.jpg" },
+            { id: 'Multiverse', name: "Chogan Multiverse", inspiration: "Event Exclusive", category: "Event", price50: "60€", slika: "Multiverse.png" },
+            { id: 'Event22', name: "Chogan Event 22", inspiration: "Event Exclusive", category: "Event", price50: "60€", slika: "Event%2022.jpg" },
+            { id: 'Event23M', name: "Chogan Event 23M", inspiration: "Event Exclusive", category: "Event", price50: "60€", slika: "Event23M.jpg" },
+            { id: 'Event23W', name: "Chogan Event 23W", inspiration: "Event Exclusive", category: "Event", price50: "60€", slika: "Event23W.jpg" },
+            { id: 'Imperatrix', name: "Chogan Imperatrix", inspiration: "Event Exclusive", category: "Event", price50: "60€", slika: "Imperatrix.jpg" },
+            { id: 'Astral', name: "Chogan Astral", inspiration: "Event Exclusive", category: "Event", price50: "60€", slika: "Astral.jpg" }
         ];
-
-        // Slika mapping - zameni sa pravim Imgur linkovima
-        const getPerfumeImage = (category, id) => {
-            // Ovde dodaj svoje Imgur linkove po kategorijama
-            const images = {
-                'Ženski': [
-                    'https://imgur.com/gallery/parfemi-oM5tNKK#G0ZDb5X',
- 
-                ],
-                'Ženski Premium': [
-                    
-'https://imgur.com/gallery/parfemi-oM5tNKK#G0ZDb5X'
-                ],
-                'Muški': [
-                    'https://imgur.com/gallery/parfemi-oM5tNKK#c6NiOxQ',
-                    
-                ],
-                'Muški Premium': [
-                    'https://imgur.com/gallery/parfemi-oM5tNKK#c6NiOxQ',
-                   
-                ],
-                'Unisex': [
-                    'https://imgur.com/gallery/parfemi-oM5tNKK#c6NiOxQ',
-                    
-                ],
-                'Luksuzni': [
-                    'https://imgur.com/gallery/parfemi-oM5tNKK#QK1BdjR',
-                    'https://imgur.com/gallery/parfemi-oM5tNKK#ETDAD9U',
-
-'https://imgur.com/gallery/parfemi-oM5tNKK#kbadlK3',
-
-'https://imgur.com/gallery/parfemi-oM5tNKK#Nt1cYbZ',
-
-'https://imgur.com/gallery/parfemi-oM5tNKK#C9HMJUm'
-                ],
-                'Event': [
-                    'https://imgur.com/gallery/parfemi-oM5tNKK#9T7eMcp',
-
-'https://imgur.com/gallery/parfemi-oM5tNKK#by52xAD',
-
-'https://imgur.com/gallery/parfemi-oM5tNKK#pykfkHK',
-
-'https://imgur.com/gallery/parfemi-oM5tNKK#WsWehae',
-
-'https://imgur.com/gallery/parfemi-oM5tNKK#3UMzi7X',
-
-'https://imgur.com/gallery/parfemi-oM5tNKK#MMbNCE1',
-
-'https://imgur.com/gallery/parfemi-oM5tNKK#sI0lEqW'
-                ]
-            };
-            
-            const categoryImages = images[category] || images['Ženski'];
-            return categoryImages[id % categoryImages.length];
-        };
 
         // DOM Elements
         const grid = document.getElementById('productsGrid');
@@ -2028,6 +2038,22 @@
             return prices.join(' | ');
         }
 
+        // Render boja badge za luksuzne
+        function renderBojaBadge(boja) {
+            const bojaColors = {
+                'Crni': '#1a1a1a',
+                'Beli': '#f5f5f5',
+                'Zlatni': '#D4AF37',
+                'Plavi': '#4A90E2',
+                'Crveni': '#DC143C'
+            };
+            
+            return `<span style="display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; margin-bottom: 10px;">
+                <span style="width: 12px; height: 12px; background: ${bojaColors[boja]}; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);"></span>
+                ${boja} bočica
+            </span>`;
+        }
+
         // Render Products
         function renderProducts() {
             const filtered = perfumes.filter(p => {
@@ -2039,20 +2065,40 @@
             });
 
             grid.innerHTML = filtered.map(p => {
-                const image = getPerfumeImage(p.category, p.id);
+                // Odredi sliku
+                let image;
+                if (p.category === 'Event' && p.slika) {
+                    image = baseUrl + p.slika;
+                } else if (p.category === 'Luksuzni' && p.boja) {
+                    const bojaFiles = {
+                        'Crni': 'Crni.jpg',
+                        'Beli': 'Beli.jpg',
+                        'Zlatni': 'Zlatni.png',
+                        'Plavi': 'Plavi.png',
+                        'Crveni': 'Crveni.jpg'
+                    };
+                    image = baseUrl + bojaFiles[p.boja];
+                } else if (p.category === 'Muški' || p.category === 'Muški Premium' || p.category === 'Unisex') {
+                    image = baseUrl + 'Muski%20parfem.png';
+                } else {
+                    image = baseUrl + 'Zenski%20parfem.png';
+                }
+                
                 const priceDisplay = formatPrice(p);
+                const bojaBadge = (p.category === 'Luksuzni' && p.boja) ? renderBojaBadge(p.boja) : '';
                 const refillTag = p.hasRefill ? '<span class="size-tag refill">15ml dopuna - cena na upit</span>' : '';
                 
                 return `
                     <div class="product-card">
-                        <div class="product-image">
+                        <div class="product-image" style="height: 250px;">
                             <span class="product-badge">${p.category}</span>
-                            <img src="${image}" alt="${p.name}" loading="lazy">
+                            <img src="${image}" alt="${p.name}" loading="lazy" style="object-fit: contain; padding: 20px; max-height: 100%; width: auto; margin: 0 auto;" onerror="this.src='${baseUrl}Zenski%20parfem.png'">
                         </div>
                         <div class="product-info">
                             <span class="product-number">Br. ${p.id}</span>
                             <h3 class="product-name">${p.name}</h3>
                             <p class="product-inspiration">Inspiriran: ${p.inspiration}</p>
+                            ${bojaBadge}
                             <div class="product-sizes">
                                 ${p.price30 ? '<span class="size-tag">30ml</span>' : ''}
                                 ${p.price70 ? '<span class="size-tag">70ml</span>' : ''}
@@ -2060,7 +2106,7 @@
                                 ${refillTag}
                             </div>
                             <p class="product-price">${priceDisplay}</p>
-                            <button class="btn-order" onclick="orderProduct('${p.name}', '${p.inspiration}', '${priceDisplay}')">
+                            <button class="btn-order" onclick="orderProduct('${p.name}', '${p.inspiration}', '${priceDisplay}', '${p.boja || ''}')">
                                 Poruči via WhatsApp
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -2084,8 +2130,16 @@
         }
 
         // Order Product via WhatsApp
-        function orderProduct(name, inspiration, price) {
-            const message = `Zdravo! Želim da poručim:\n\n${name}\n(Inspiriran: ${inspiration})\n${price}\n\nMolim vas za informacije o dostupnosti i načinu plaćanja. Hvala!`;
+        function orderProduct(name, inspiration, price, boja) {
+            let bojaIzbor = '';
+            
+            // Ako ima boju (luksuzni), dodaj u poruku
+            if (boja && boja !== '') {
+                bojaIzbor = `\n\n*Boja bočice: ${boja}*`;
+            }
+            
+            const message = `Zdravo! Želim da poručim:\n\n*${name}*\nInspiriran: ${inspiration}\n${price}${bojaIzbor}\n\nMolim vas za informacije o dostupnosti i načinu plaćanja. Hvala!`;
+            
             const whatsappUrl = `https://wa.me/381605415570?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
