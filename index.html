@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChoganLuxRS | Olfazeta Parfemi Srbija</title>
-    <meta name="description" content="Ovlašćeni distributer Chogan Olfazeta parfema u Srbiji. Luksuzni parfemi sa 30% esencije po dostupnim cenama.">
-    <meta property="og:title" content="ChoganLuxRS | Olfazeta Parfemi Srbija">
-    <meta property="og:description" content="Ovlašćeni distributer Chogan Olfazeta parfema u Srbiji.">
+    <title>ChoganLuxRS | Olfazeta Parfemi Srbija | 100+ Mirisa</title>
+    <meta name="description" content="Ovlašćeni distributer Chogan Olfazeta parfema u Srbiji. Preko 100 luksuznih mirisa po dostupnim cenama. Dostava širom Srbije.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -518,6 +516,86 @@
             letter-spacing: 1px;
         }
 
+        /* CENOVNIK SECTION */
+        .pricing-section {
+            padding: 80px 5%;
+            background: var(--black-soft);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--black-card);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--gold-primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: 'NAJPOPULARNIJE';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--gold-primary);
+            color: var(--black-deep);
+            padding: 5px 40px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+        }
+
+        .pricing-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            color: var(--gold-primary);
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            color: var(--gray-light);
+            font-weight: 400;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.8);
+        }
+
+        .pricing-card li::before {
+            content: '✓';
+            color: var(--gold-primary);
+            margin-right: 10px;
+        }
+
         /* FAQ SECTION */
         .faq-section {
             padding: 100px 5%;
@@ -777,7 +855,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -804,8 +882,12 @@
 
         .product-image {
             position: relative;
-            height: 300px;
+            height: 280px;
             overflow: hidden;
+            background: linear-gradient(135deg, var(--black-soft), var(--black-card));
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .product-badge {
@@ -837,49 +919,86 @@
             padding: 25px;
         }
 
-        .product-brand {
+        .product-number {
             display: block;
             color: var(--gold-primary);
             font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
         .product-name {
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 10px;
             font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .product-inspiration {
+            color: var(--gray-light);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .product-sizes {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .size-tag {
+            background: rgba(255,255,255,0.05);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .size-tag.refill {
+            background: rgba(212,175,55,0.1);
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
         }
 
         .product-price {
-            color: var(--gray-light);
-            font-size: 0.95rem;
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            font-weight: 700;
             margin-bottom: 20px;
         }
 
-        .btn-small {
+        .product-price .note {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+            font-weight: 400;
+        }
+
+        .btn-order {
             width: 100%;
-            padding: 12px;
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: var(--white);
-            border-radius: 8px;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            border: none;
+            color: var(--black-deep);
+            border-radius: 10px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             transition: var(--transition);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
-        .btn-small:hover {
-            background: var(--gold-primary);
-            border-color: var(--gold-primary);
-            color: var(--black-deep);
-            font-weight: 600;
+        .btn-order:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.3);
         }
 
         .no-results {
@@ -891,6 +1010,35 @@
 
         .no-results.show {
             display: block;
+        }
+
+        /* STATS BAR */
+        .stats-bar {
+            background: var(--black-card);
+            border-top: 1px solid rgba(212,175,55,0.2);
+            border-bottom: 1px solid rgba(212,175,55,0.2);
+            padding: 30px 5%;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold-primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
         }
 
         /* INSTAGRAM CTA */
@@ -1053,6 +1201,10 @@
             .collection-header h2 {
                 font-size: 2rem;
             }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
         }
 
         @media (max-width: 600px) {
@@ -1090,6 +1242,10 @@
             .about-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* MOBILE MENU */
@@ -1126,7 +1282,7 @@
         <ul class="nav-links">
             <li><a href="#home">Početna</a></li>
             <li><a href="#o-nama">O nama</a></li>
-            <li><a href="#olfazeta">Olfazeta</a></li>
+            <li><a href="#cenovnik">Cenovnik</a></li>
             <li><a href="#kolekcija">Kolekcija</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
         </ul>
@@ -1154,10 +1310,10 @@
                 <span>PARFEMI</span>
             </h1>
             <p class="hero-desc">
-                Luksuz koji miriše na uspeh. Otkrijte svet ekskluzivnih mirisa inspirisanih najpoznatijim svetskim brendovima, kreiranih sa 30% esencije za dugotrajnost koja fascinira.
+                Preko 100 luksuznih mirisa po dostupnim cenama. Originalni italijanski proizvodi sa 30% esencije. Dostava širom Srbije.
             </p>
             <div class="hero-buttons">
-                <a href="#kolekcija" class="btn btn-primary">ISTRAŽITE KOLEKCIJU</a>
+                <a href="#kolekcija" class="btn btn-primary">POGLEDAJ PONUDU</a>
                 <a href="https://instagram.com/choganluxrs" target="_blank" class="btn btn-outline">ZAPRATITE NAS</a>
             </div>
         </div>
@@ -1170,13 +1326,35 @@
         </div>
     </section>
 
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h4>100+</h4>
+                <p>Različitih mirisa</p>
+            </div>
+            <div class="stat-item">
+                <h4>30%</h4>
+                <p>Parfemske esencije</p>
+            </div>
+            <div class="stat-item">
+                <h4>24h</h4>
+                <p>Dugotrajnost</p>
+            </div>
+            <div class="stat-item">
+                <h4>100%</h4>
+                <p>Originalni proizvodi</p>
+            </div>
+        </div>
+    </div>
+
     <!-- ABOUT CHOGAN SECTION -->
     <section class="about-chogan" id="o-nama">
         <div class="section-header">
             <span class="section-subtitle">ITALIJANSKI LUKSUZ</span>
             <h2 class="section-title">O Chogan Group</h2>
             <p style="color: rgba(255,255,255,0.7); margin-top: 15px;">
-                Chogan Group je italijanska kompanija osnovana 2013. godine, specijalizovana za proizvodnju i distribuciju parfema, kozmetike i proizvoda za ličnu negu. Sedište kompanije nalazi se u Italiji, a danas posluje širom Evrope.
+                Chogan Group je italijanska kompanija osnovana 2013. godine, specijalizovana za proizvodnju i distribuciju parfema, kozmetike i proizvoda za ličnu negu.
             </p>
         </div>
 
@@ -1190,8 +1368,8 @@
                 <h3>✨ Zašto Chogan?</h3>
                 <ul>
                     <li>Proizvodi inspirisani poznatim luksuznim brendovima</li>
-                    <li>Visok procenat parfemskih esencija</li>
-                    <li>Dugotrajnost mirisa</li>
+                    <li>Visok procenat parfemskih esencija (30%)</li>
+                    <li>Dugotrajnost mirisa do 24 sata</li>
                     <li>Proizvodnja u Italiji</li>
                     <li>Kontrola kvaliteta prema EU standardima</li>
                 </ul>
@@ -1200,18 +1378,18 @@
             <div class="about-card">
                 <h3>📦 Asortiman</h3>
                 <ul>
-                    <li>Parfemi (Olfazeta linija)</li>
+                    <li>Parfemi (Olfazeta linija) - 30ml, 50ml, 70ml</li>
+                    <li>Dopune (refill) - 15ml</li>
                     <li>Kozmetika za lice i telo</li>
                     <li>Šamponi i gelovi</li>
                     <li>Kućna hemija</li>
-                    <li>Dodaci ishrani</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- OLFAZETA HIGHLIGHT -->
-    <section class="olfazeta-highlight" id="olfazeta">
+    <section class="olfazeta-highlight">
         <div class="olfazeta-content">
             <div class="olfazeta-text">
                 <span class="section-subtitle">NAJPOPULARNIJA LINIJA</span>
@@ -1228,14 +1406,14 @@
                         <div class="feature-icon">💎</div>
                         <div>
                             <strong>Koncentracija</strong><br>
-                            <small>Eau de Parfum (EDP)</small>
+                            <small>Extrait de Parfum</small>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">⏰</div>
                         <div>
                             <strong>Dugotrajnost</strong><br>
-                            <small>6–12 sati</small>
+                            <small>6–24 sata</small>
                         </div>
                     </div>
                     <div class="feature-item">
@@ -1258,9 +1436,64 @@
             <div class="olfazeta-image">
                 <img src="https://images.pexels.com/photos/14490637/pexels-photo-14490637.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Olfazeta Parfemi">
                 <div class="experience-badge">
-                    <span class="number">30%</span>
-                    <span class="text">Esencije</span>
+                    <span class="number">100+</span>
+                    <span class="text">Mirisa</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="cenovnik">
+        <div class="section-header">
+            <span class="section-subtitle">CENOVNIK</span>
+            <h2 class="section-title">Cene Parfema</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-top: 15px;">
+                Sve cene su izražene u evrima. Plaćanje u dinarima po srednjem kursu NBS.
+            </p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Standardni</h3>
+                <div class="price">18€ <span>/ 30ml</span></div>
+                <div class="price">35€ <span>/ 70ml</span></div>
+                <ul>
+                    <li>Ženski parfemi</li>
+                    <li>Muški parfemi</li>
+                    <li>Unisex (odabrani)</li>
+                    <li>30% esencije</li>
+                    <li>Dugotrajnost 6-12h</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('kolekcija').scrollIntoView({behavior: 'smooth'})">Pogledaj</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Premium</h3>
+                <div class="price">26€+ <span>/ 30ml</span></div>
+                <div class="price">48€+ <span>/ 70ml</span></div>
+                <ul>
+                    <li>Premium ženski</li>
+                    <li>Premium muški</li>
+                    <li>Unisex premium</li>
+                    <li>Viša koncentracija</li>
+                    <li>Ekskluzivni mirisi</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('kolekcija').scrollIntoView({behavior: 'smooth'})">Pogledaj</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Luksuzni & Event</h3>
+                <div class="price">52€ <span>/ 50ml</span></div>
+                <div class="price">65€ <span>/ 50ml</span></div>
+                <ul>
+                    <li>Luksuzna linija 50ml</li>
+                    <li>Event parfemi 50ml</li>
+                    <li>Najviša koncentracija</li>
+                    <li>Ekskluzivne note</li>
+                    <li>Limitirane serije</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('kolekcija').scrollIntoView({behavior: 'smooth'})">Pogledaj</button>
             </div>
         </div>
     </section>
@@ -1289,7 +1522,17 @@
                     <div class="faq-icon">+</div>
                 </div>
                 <div class="faq-answer">
-                    <p>Zahvaljujući visokoj koncentraciji esencije od <strong>30%</strong>, Olfazeta parfemi spadaju u kategoriju "Extrait de Parfum". To znači da miris može trajati od <strong>6 do 12 sati</strong> na koži, a na odeći i duže. Dugotrajnost zavisi od tipa kože, aktivnosti i načina nanošenja.</p>
+                    <p>Zahvaljujući visokoj koncentraciji esencije od <strong>30%</strong>, Olfazeta parfemi spadaju u kategoriju "Extrait de Parfum". To znači da miris može trajati od <strong>6 do 24 sata</strong> na koži, a na odeći i duže. Dugotrajnost zavisi od tipa kože, aktivnosti i načina nanošenja.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Imate li dopune (refill) za parfeme?</h4>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Da! Za svaki parfem imamo dostupne <strong>dopune od 15ml</strong>. Cena dopune je na upit i zavisi od konkretnog parfema. Dopune su idealne za putovanja ili dopunjavanje vaše omiljene bočice.</p>
                 </div>
             </div>
 
@@ -1300,10 +1543,11 @@
                 </div>
                 <div class="faq-answer">
                     <p>Parfeme možete poručiti putem:</p>
-                    <p>• <strong>Instagrama:</strong> Pošaljite nam direktnu poruku na @choganluxrs</p>
-                    <p>• <strong>Facebooka:</strong> Kontaktirajte nas na našoj Facebook stranici</p>
-                    <p>• <strong>Emaila:</strong> choganluxrs@gmail.com</p>
-                    <p>• <strong>Telefona:</strong> +381 60 541 5570 (pozivi i WhatsApp)</p>
+                    <p>• <strong>WhatsApp:</strong> +381 60 541 5570 (najbrži način)</p>
+                    <p>• <strong>Instagram:</strong> @choganluxrs (direktna poruka)</p>
+                    <p>• <strong>Facebook:</strong> ChoganLuxRS stranica</p>
+                    <p>• <strong>Email:</strong> choganluxrs@gmail.com</p>
+                    <p>• <strong>Telefon:</strong> poziv ili SMS na +381 60 541 5570</p>
                 </div>
             </div>
 
@@ -1313,7 +1557,7 @@
                     <div class="faq-icon">+</div>
                 </div>
                 <div class="faq-answer">
-                    <p>Da, vršimo dostavu na teritoriji cele Srbije. Pakovanje je diskretno i bezbedno. Plaćanje se vrši <strong>pouzećem</strong> prilikom preuzimanja paketa ili <strong>uplatom na račun</strong> pre slanja. Za narudžbine preko određenog iznosa, dostava je besplatna.</p>
+                    <p>Da, vršimo dostavu na teritoriji cele Srbije putem kurirske službe. Pakovanje je diskretno i bezbedno. Plaćanje se vrši <strong>pouzećem</strong> prilikom preuzimanja paketa ili <strong>uplatom na račun</strong> pre slanja. Za narudžbine preko 100€, dostava je besplatna.</p>
                 </div>
             </div>
 
@@ -1324,16 +1568,6 @@
                 </div>
                 <div class="faq-answer">
                     <p>Kada kažemo da je parfem "inspirisan" nekim poznatim brendom, to znači da su <strong>mirisne note slične</strong> (npr. citrusne, drvene, cvetne), ali je formulacija Chogan-ova. Ne radi se o identičnoj kopiji, već o parfemu koji pruža <strong>sličan osećaj i aromu</strong> po mnogo pristupačnijoj ceni.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <h4>Da li su sastojci bezbedni i testirani?</h4>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <p>Apsolutno! Svi Chogan proizvodi se proizvode u <strong>Italiji</strong> pod strogom kontrolom kvaliteta i u skladu sa <strong>EU standardima</strong>. Koriste se visokokvalitetne esencije iz Grasa (Francuska), svetske prestonice parfema. Proizvodi su bezbedni za kožu i ne sadrže štetne hemikalije.</p>
                 </div>
             </div>
         </div>
@@ -1368,9 +1602,9 @@
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
                 </div>
-                <h3>Telefon</h3>
-                <p>Pozivi i WhatsApp</p>
-                <a href="tel:+381605415570">+381 60 541 5570</a>
+                <h3>WhatsApp / Tel</h3>
+                <p>Najbrži način poručivanja</p>
+                <a href="https://wa.me/381605415570" target="_blank">+381 60 541 5570</a>
             </div>
 
             <div class="contact-card">
@@ -1407,10 +1641,10 @@
             </video>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="hero-eyebrow">CHOGAN LUXURY EXPERIENCE</span>
+                <span class="hero-eyebrow">PREKO 100 MIRISA</span>
                 <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem;">
                     <span style="background: linear-gradient(135deg, var(--gold-primary), var(--gold-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        Olfazeta Collection
+                        Naša Kolekcija
                     </span>
                 </h2>
             </div>
@@ -1423,16 +1657,17 @@
                         <circle cx="11" cy="11" r="8"></circle>
                         <path d="m21 21-4.3-4.3"></path>
                     </svg>
-                    <input type="text" class="search-input" id="searchInput" placeholder="Pretraži parfeme...">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Pretraži parfeme po broju ili imenu...">
                 </div>
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-filter="Svi">Svi</button>
-                    <button class="filter-btn" data-filter="Standardni Muški">Standardni Muški</button>
-                    <button class="filter-btn" data-filter="Standardni Ženski">Standardni Ženski</button>
-                    <button class="filter-btn" data-filter="Premium Muški">Premium Muški</button>
-                    <button class="filter-btn" data-filter="Premium Ženski">Premium Ženski</button>
+                    <button class="filter-btn" data-filter="Ženski">Ženski</button>
+                    <button class="filter-btn" data-filter="Ženski Premium">Ženski Premium</button>
+                    <button class="filter-btn" data-filter="Muški">Muški</button>
+                    <button class="filter-btn" data-filter="Muški Premium">Muški Premium</button>
                     <button class="filter-btn" data-filter="Unisex">Unisex</button>
-                    <button class="filter-btn" data-filter="Luksuzni">Luksuzni</button>
+                    <button class="filter-btn" data-filter="Luksuzni">Luksuzni 50ml</button>
+                    <button class="filter-btn" data-filter="Event">Event 50ml</button>
                 </div>
             </div>
         </div>
@@ -1460,7 +1695,7 @@
             </svg>
         </div>
         <h2>Budite deo naše luksuzne zajednice</h2>
-        <p>Pratite nas za najnovije objave, recenzije kupaca i ekskluzivne ponude.</p>
+        <p>Pratite nas za najnovije objave, recenzije kupaca i ekskluzivne ponude. Preko 100 zadovoljnih kupaca širom Srbije!</p>
         <a href="https://instagram.com/choganluxrs" target="_blank" class="btn-instagram">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -1476,7 +1711,7 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h3>CHOGANLUXRS</h3>
-                <p>Ovlašćeni distributer Chogan Olfazeta parfema u Srbiji. Originalni proizvodi iz Italije sa garancijom kvaliteta.</p>
+                <p>Ovlašćeni distributer Chogan Olfazeta parfema u Srbiji. Originalni proizvodi iz Italije sa garancijom kvaliteta. Preko 100 luksuznih mirisa po dostupnim cenama.</p>
                 <div class="social-links">
                     <a href="https://instagram.com/choganluxrs" target="_blank" title="Instagram">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1496,7 +1731,7 @@
                             <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                     </a>
-                    <a href="tel:+381605415570" title="Telefon">
+                    <a href="https://wa.me/381605415570" target="_blank" title="WhatsApp">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
@@ -1506,15 +1741,15 @@
             <div class="footer-col">
                 <h3>Brzi Linkovi</h3>
                 <a href="#o-nama">O nama</a>
-                <a href="#olfazeta">O Olfazeta</a>
-                <a href="#faq">FAQ</a>
-                <a href="#kolekcija">Kolekcija</a>
+                <a href="#cenovnik">Cenovnik</a>
+                <a href="#kolekcija">Kolekcija parfema</a>
+                <a href="#faq">FAQ - Pitanja</a>
                 <a href="#kontakt">Kontakt</a>
             </div>
             <div class="footer-col">
                 <h3>Kontakt Info</h3>
                 <p>Email: choganluxrs@gmail.com</p>
-                <p>Tel: +381 60 541 5570</p>
+                <p>Tel/WhatsApp: +381 60 541 5570</p>
                 <p>Instagram: @choganluxrs</p>
                 <p>Facebook: ChoganLuxRS</p>
                 <p>Srbija | Chogan Official Partner</p>
@@ -1526,7 +1761,7 @@
     </footer>
 
     <script>
-        // LOADER
+                // LOADER
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
@@ -1548,43 +1783,214 @@
             const faqItem = element.parentElement;
             const isActive = faqItem.classList.contains('active');
             
-            // Zatvori sve
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
             });
             
-            // Otvori kliknuti ako nije bio aktivan
             if (!isActive) {
                 faqItem.classList.add('active');
             }
         }
 
-        // PERFUME DATA
+        // SVI PARFEMI SA TVOJE LISTE
         const perfumes = [
-            { id: 1, name: "Chogan 001 - Inspired by Dior Sauvage", cat: "Standardni Muški", img: "https://images.pexels.com/photos/1961792/pexels-photo-1961792.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 2, name: "Chogan 002 - Inspired by Chanel No. 5", cat: "Standardni Ženski", img: "https://images.pexels.com/photos/1125328/pexels-photo-1125328.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 3, name: "Chogan 003 - Inspired by Bleu de Chanel", cat: "Premium Muški", img: "https://images.pexels.com/photos/3059609/pexels-photo-3059609.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 4, name: "Chogan 004 - Inspired by La Vie Est Belle", cat: "Premium Ženski", img: "https://images.pexels.com/photos/1557980/pexels-photo-1557980.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 5, name: "Chogan 005 - Inspired by Tom Ford Oud Wood", cat: "Luksuzni", img: "https://images.pexels.com/photos/264870/pexels-photo-264870.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 6, name: "Chogan 006 - Inspired by Creed Aventus", cat: "Unisex", img: "https://images.pexels.com/photos/3018845/pexels-photo-3018845.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 7, name: "Chogan 007 - Inspired by YSL Black Opium", cat: "Standardni Ženski", img: "https://images.pexels.com/photos/258737/pexels-photo-258737.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 8, name: "Chogan 008 - Inspired by Versace Eros", cat: "Standardni Muški", img: "https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 9, name: "Chogan 009 - Inspired by Gucci Bloom", cat: "Premium Ženski", img: "https://images.pexels.com/photos/12402366/pexels-photo-12402366.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 10, name: "Chogan 010 - Inspired by Dior Homme", cat: "Premium Muški", img: "https://images.pexels.com/photos/35488878/pexels-photo-35488878.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 11, name: "Chogan 011 - Inspired by Baccarat Rouge", cat: "Luksuzni", img: "https://images.pexels.com/photos/21008941/pexels-photo-21008941.jpeg?auto=compress&cs=tinysrgb&w=800" },
-            { id: 12, name: "Chogan 012 - Inspired by CK One", cat: "Unisex", img: "https://images.pexels.com/photos/14466498/pexels-photo-14466498.jpeg?auto=compress&cs=tinysrgb&w=800" },
+            // ŽENSKI STANDARDNI (18€/35€)
+            { id: 6, name: "Chogan 006", inspiration: "Opium", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 7, name: "Chogan 007", inspiration: "J'adore", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 10, name: "Chogan 010", inspiration: "Alien", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 11, name: "Chogan 011", inspiration: "Light Blue", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 14, name: "Chogan 014", inspiration: "Manifesto", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 19, name: "Chogan 019", inspiration: "Lady Million", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 23, name: "Chogan 023", inspiration: "Hypnotic Poison", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 24, name: "Chogan 024", inspiration: "No°5", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 25, name: "Chogan 025", inspiration: "For Her", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 26, name: "Chogan 026", inspiration: "Flower", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 27, name: "Chogan 027", inspiration: "Trésor", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 28, name: "Chogan 028", inspiration: "Angel", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 29, name: "Chogan 029", inspiration: "L'Eau d'Issey", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 35, name: "Chogan 035", inspiration: "Chance", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 39, name: "Chogan 039", inspiration: "Miss Dior", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 40, name: "Chogan 040", inspiration: "Hypnôse", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 42, name: "Chogan 042", inspiration: "La Vie Est Belle", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 47, name: "Chogan 047", inspiration: "Crystal Noir", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 49, name: "Chogan 049", inspiration: "Dolce", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 51, name: "Chogan 051", inspiration: "Coco Mademoiselle", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 53, name: "Chogan 053", inspiration: "Narciso", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 55, name: "Chogan 055", inspiration: "Black Opium", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 56, name: "Chogan 056", inspiration: "Ange ou Démon", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 57, name: "Chogan 057", inspiration: "Omnia Amethyste", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 64, name: "Chogan 064", inspiration: "Omnia Indian Garnet", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 67, name: "Chogan 067", inspiration: "Olympéa", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 70, name: "Chogan 070", inspiration: "The One", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 71, name: "Chogan 071", inspiration: "Allure", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 76, name: "Chogan 076", inspiration: "Acqua di Gioia", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 80, name: "Chogan 080", inspiration: "Si", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 81, name: "Chogan 081", inspiration: "Classique", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 82, name: "Chogan 082", inspiration: "Signorina", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 89, name: "Chogan 089", inspiration: "Mon Paris", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 90, name: "Chogan 090", inspiration: "Poison Girl", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 96, name: "Chogan 096", inspiration: "Gabrielle", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 97, name: "Chogan 097", inspiration: "Amo Ferragamo", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 98, name: "Chogan 098", inspiration: "Joy", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 116, name: "Chogan 116", inspiration: "Yes I Am", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 119, name: "Chogan 119", inspiration: "Scandal", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 120, name: "Chogan 120", inspiration: "La Petite Robe Noire", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 121, name: "Chogan 121", inspiration: "L'Interdit", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 133, name: "Chogan 133", inspiration: "Paradox", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 145, name: "Chogan 145", inspiration: "Devotion", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 148, name: "Chogan 148", inspiration: "Goddess", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 151, name: "Chogan 151", inspiration: "Guilty", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 153, name: "Chogan 153", inspiration: "Chloé", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 154, name: "Chogan 154", inspiration: "Love Chloé", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 156, name: "Chogan 156", inspiration: "Hugo Woman", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 158, name: "Chogan 158", inspiration: "Flora", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 159, name: "Chogan 159", inspiration: "Burberry for Women", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 115, name: "Chogan 115", inspiration: "Idôle", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 161, name: "Chogan 161", inspiration: "Born in Roma Donna Intense", category: "Ženski", price30: "18€", price70: "35€", hasRefill: true },
+
+            // ŽENSKI PREMIUM
+            { id: 93, name: "Chogan 093", inspiration: "Aventus for Her", category: "Ženski Premium", price30: "27€", price70: "52€", hasRefill: true },
+            { id: 122, name: "Chogan 122", inspiration: "Libre", category: "Ženski Premium", price30: "26€", price70: "50€", hasRefill: true },
+            { id: 131, name: "Chogan 131", inspiration: "Good Girl", category: "Ženski Premium", price30: "26€", price70: "50€", hasRefill: true },
+            { id: 132, name: "Chogan 132", inspiration: "My Way", category: "Ženski Premium", price30: "26€", price70: "50€", hasRefill: true },
+
+            // MUŠKI STANDARDNI (18€/35€)
+            { id: 1, name: "Chogan 001", inspiration: "One Million", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 2, name: "Chogan 002", inspiration: "Acqua di Gio", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 3, name: "Chogan 003", inspiration: "Fahrenheit", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 4, name: "Chogan 004", inspiration: "The One", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 12, name: "Chogan 012", inspiration: "Eau Sauvage", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 15, name: "Chogan 015", inspiration: "Roma Uomo", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 16, name: "Chogan 016", inspiration: "Le Male", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 18, name: "Chogan 018", inspiration: "Déclaration", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 20, name: "Chogan 020", inspiration: "La Nuit de L'Homme", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 21, name: "Chogan 021", inspiration: "Light Blue Homme", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 22, name: "Chogan 022", inspiration: "Terre d'Hermès", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 30, name: "Chogan 030", inspiration: "Black XS", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 31, name: "Chogan 031", inspiration: "Blu pour Homme", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 32, name: "Chogan 032", inspiration: "Spicebomb", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 33, name: "Chogan 033", inspiration: "B. Man", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 38, name: "Chogan 038", inspiration: "Bleu de Chanel", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 48, name: "Chogan 048", inspiration: "Allure Homme", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 52, name: "Chogan 052", inspiration: "Pasha de Cartier", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 61, name: "Chogan 061", inspiration: "Invictus", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 62, name: "Chogan 062", inspiration: "Intenso", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 66, name: "Chogan 066", inspiration: "Scent Intense", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 69, name: "Chogan 069", inspiration: "Acqua di Sale", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 79, name: "Chogan 079", inspiration: "Myself", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 84, name: "Chogan 084", inspiration: "Dylan Blue", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 86, name: "Chogan 086", inspiration: "Legend", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 87, name: "Chogan 087", inspiration: "Wanted", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 88, name: "Chogan 088", inspiration: "Man in Black", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 91, name: "Chogan 091", inspiration: "Chrome", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 140, name: "Chogan 140", inspiration: "Eros", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 147, name: "Chogan 147", inspiration: "Bottled Absolu", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 150, name: "Chogan 150", inspiration: "Hugo", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 152, name: "Chogan 152", inspiration: "Guilty pour Homme", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 157, name: "Chogan 157", inspiration: "B. The Scent", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 160, name: "Chogan 160", inspiration: "Burberry for Men", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 162, name: "Chogan 162", inspiration: "Born in Roma Uomo Intense", category: "Muški", price30: "18€", price70: "35€", hasRefill: true },
+
+            // MUŠKI PREMIUM
+            { id: 60, name: "Chogan 060", inspiration: "Millésime Afgano", category: "Muški Premium", price30: "26€", price70: "48€", hasRefill: true },
+            { id: 68, name: "Chogan 068", inspiration: "Aventus", category: "Muški Premium", price30: "30€", price70: "57€", hasRefill: true },
+            { id: 94, name: "Chogan 094", inspiration: "Sauvage", category: "Muški Premium", price30: "26€", price70: "50€", hasRefill: true },
+            { id: 108, name: "Chogan 108", inspiration: "Green Irish Tweed", category: "Muški Premium", price30: "26€", price70: "50€", hasRefill: true },
+            { id: 113, name: "Chogan 113", inspiration: "Sur La Route", category: "Muški Premium", price30: "30€", price70: "57€", hasRefill: true },
+            { id: 136, name: "Chogan 136", inspiration: "Homme Intense", category: "Muški Premium", price30: "23€", price70: "45€", hasRefill: true },
+
+            // UNISEX
+            { id: 44, name: "Chogan 044", inspiration: "Silver Mountain Water", category: "Unisex", price30: "26€", price70: "48€", hasRefill: true },
+            { id: 54, name: "Chogan 054", inspiration: "Black Orchid", category: "Unisex", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 72, name: "Chogan 072", inspiration: "Patchouli", category: "Unisex", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 73, name: "Chogan 073", inspiration: "Himalaya", category: "Unisex", price30: "26€", price70: "48€", hasRefill: true },
+            { id: 99, name: "Chogan 099", inspiration: "Mandarino di Amalfi", category: "Unisex", price30: "24€", price70: "45€", hasRefill: true },
+            { id: 100, name: "Chogan 100", inspiration: "White Aoud", category: "Unisex", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 105, name: "Chogan 105", inspiration: "Intense Café", category: "Unisex", price30: "18€", price70: "35€", hasRefill: true },
+            { id: 110, name: "Chogan 110", inspiration: "Kirke", category: "Unisex", price30: "26€", price70: "48€", hasRefill: true },
+            { id: 114, name: "Chogan 114", inspiration: "Ombre Nomade", category: "Unisex", price30: "26€", price70: "48€", hasRefill: true },
+            { id: 135, name: "Chogan 135", inspiration: "Bois d'Argent", category: "Unisex", price30: "30€", price70: "57€", hasRefill: true },
+            { id: 142, name: "Chogan 142", inspiration: "Ombre Leather", category: "Unisex", price30: "27€", price70: "52€", hasRefill: true },
+            { id: 155, name: "Chogan 155", inspiration: "CK One", category: "Unisex", price30: "18€", price70: "35€", hasRefill: true },
+
+            // LUKSUZNI 50ml (52€)
+            { id: 74, name: "Chogan 074", inspiration: "Black Afgano", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 75, name: "Chogan 075", inspiration: "X for Men", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 101, name: "Chogan 101", inspiration: "Velvet Amber Skin", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 102, name: "Chogan 102", inspiration: "Velvet Amber Sun", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 106, name: "Chogan 106", inspiration: "Fucking Fabulous", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 109, name: "Chogan 109", inspiration: "J'adore L'Or", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 111, name: "Chogan 111", inspiration: "Lost Cherry", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 112, name: "Chogan 112", inspiration: "Neroli Portofino", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 117, name: "Chogan 117", inspiration: "Tobacco Vanille", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 118, name: "Chogan 118", inspiration: "Baccarat Rouge 540", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 123, name: "Chogan 123", inspiration: "Good Girl Gone Bad", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 124, name: "Chogan 124", inspiration: "Zeta", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 125, name: "Chogan 125", inspiration: "Sole di Positano", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 126, name: "Chogan 126", inspiration: "Soleil Blanc", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 127, name: "Chogan 127", inspiration: "Oud Wood", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 128, name: "Chogan 128", inspiration: "Vanille Fatale", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 129, name: "Chogan 129", inspiration: "Erba Pura", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 134, name: "Chogan 134", inspiration: "Bitter Peach", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 137, name: "Chogan 137", inspiration: "Naxos", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 138, name: "Chogan 138", inspiration: "Whisper Sandal Wood", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 143, name: "Chogan 143", inspiration: "Vanilla Powder", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 144, name: "Chogan 144", inspiration: "Bianco Latte", category: "Luksuzni", price50: "52€", hasRefill: false },
+            { id: 146, name: "Chogan 146", inspiration: "Rouge Pierre", category: "Luksuzni", price50: "52€", hasRefill: false },
+
+            // LUKSUZNI 50ml (65€)
+            { id: 130, name: "Chogan 130", inspiration: "Megamare", category: "Luksuzni", price50: "65€", hasRefill: false },
+            { id: 139, name: "Chogan 139", inspiration: "Les Sables Roses", category: "Luksuzni", price50: "65€", hasRefill: false },
+            { id: 141, name: "Chogan 141", inspiration: "Dubai Turath", category: "Luksuzni", price50: "65€", hasRefill: false },
+
+            // EVENT 50ml (60€)
+            { id: 'Nadir', name: "Chogan Nadir", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
+            { id: 'Imperatrix', name: "Chogan Imperatrix", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
+            { id: 'Astral', name: "Chogan Astral", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
+            { id: 'Multiverse', name: "Chogan Multiverse", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
+            { id: 'Event23M', name: "Chogan Event 23M", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
+            { id: 'Event23W', name: "Chogan Event 23W", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false },
+            { id: 'Event22', name: "Chogan Event 22", inspiration: "Event Exclusive", category: "Event", price50: "60€", hasRefill: false }
         ];
 
-        // Generate more for demo
-        const fullList = [];
-        for (let i = 0; i < 48; i++) {
-            const template = perfumes[i % perfumes.length];
-            fullList.push({
-                ...template,
-                id: i + 1,
-                name: i < 12 ? template.name : `${template.name} Vol.${Math.floor(i / 12) + 1}`,
-            });
-        }
+        // Slika mapping - zameni sa pravim Imgur linkovima
+        const getPerfumeImage = (category, id) => {
+            // Ovde dodaj svoje Imgur linkove po kategorijama
+            const images = {
+                'Ženski': [
+                    'https://images.pexels.com/photos/1961792/pexels-photo-1961792.jpeg?auto=compress&cs=tinysrgb&w=800',
+                    'https://images.pexels.com/photos/1125328/pexels-photo-1125328.jpeg?auto=compress&cs=tinysrgb&w=800',
+                    'https://images.pexels.com/photos/1557980/pexels-photo-1557980.jpeg?auto=compress&cs=tinysrgb&w=800'
+                ],
+                'Ženski Premium': [
+                    'https://images.pexels.com/photos/12402366/pexels-photo-12402366.jpeg?auto=compress&cs=tinysrgb&w=800',
+                    'https://images.pexels.com/photos/14466495/pexels-photo-14466495.jpeg?auto=compress&cs=tinysrgb&w=800'
+                ],
+                'Muški': [
+                    'https://images.pexels.com/photos/3059609/pexels-photo-3059609.jpeg?auto=compress&cs=tinysrgb&w=800',
+                    'https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=800',
+                    'https://images.pexels.com/photos/35488878/pexels-photo-35488878.jpeg?auto=compress&cs=tinysrgb&w=800'
+                ],
+                'Muški Premium': [
+                    'https://images.pexels.com/photos/3018845/pexels-photo-3018845.jpeg?auto=compress&cs=tinysrgb&w=800',
+                    'https://images.pexels.com/photos/7702669/pexels-photo-7702669.jpeg?auto=compress&cs=tinysrgb&w=800'
+                ],
+                'Unisex': [
+                    'https://images.pexels.com/photos/14466498/pexels-photo-14466498.jpeg?auto=compress&cs=tinysrgb&w=800',
+                    'https://images.pexels.com/photos/264870/pexels-photo-264870.jpeg?auto=compress&cs=tinysrgb&w=800'
+                ],
+                'Luksuzni': [
+                    'https://images.pexels.com/photos/21008941/pexels-photo-21008941.jpeg?auto=compress&cs=tinysrgb&w=800',
+                    'https://images.pexels.com/photos/33820350/pexels-photo-33820350.jpeg?auto=compress&cs=tinysrgb&w=800'
+                ],
+                'Event': [
+                    'https://images.pexels.com/photos/14490637/pexels-photo-14490637.jpeg?auto=compress&cs=tinysrgb&w=800'
+                ]
+            };
+            
+            const categoryImages = images[category] || images['Ženski'];
+            return categoryImages[id % categoryImages.length];
+        };
 
         // DOM Elements
         const grid = document.getElementById('productsGrid');
@@ -1595,36 +2001,63 @@
         let currentFilter = 'Svi';
         let searchTerm = '';
 
+        // Format cene
+        function formatPrice(perfume) {
+            if (perfume.price50) {
+                return `50ml: ${perfume.price50}`;
+            }
+            let prices = [];
+            if (perfume.price30) prices.push(`30ml: ${perfume.price30}`);
+            if (perfume.price70) prices.push(`70ml: ${perfume.price70}`);
+            return prices.join(' | ');
+        }
+
         // Render Products
         function renderProducts() {
-            const filtered = fullList.filter(p => {
-                const matchesFilter = currentFilter === 'Svi' || p.cat === currentFilter;
-                const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase());
+            const filtered = perfumes.filter(p => {
+                const matchesFilter = currentFilter === 'Svi' || p.category === currentFilter;
+                const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                    p.inspiration.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                    p.id.toString().includes(searchTerm);
                 return matchesFilter && matchesSearch;
             });
 
-            grid.innerHTML = filtered.map(p => `
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">${p.cat}</span>
-                        <img src="${p.img}" alt="${p.name}" loading="lazy">
+            grid.innerHTML = filtered.map(p => {
+                const image = getPerfumeImage(p.category, p.id);
+                const priceDisplay = formatPrice(p);
+                const refillTag = p.hasRefill ? '<span class="size-tag refill">15ml dopuna - cena na upit</span>' : '';
+                
+                return `
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-badge">${p.category}</span>
+                            <img src="${image}" alt="${p.name}" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-number">Br. ${p.id}</span>
+                            <h3 class="product-name">${p.name}</h3>
+                            <p class="product-inspiration">Inspiriran: ${p.inspiration}</p>
+                            <div class="product-sizes">
+                                ${p.price30 ? '<span class="size-tag">30ml</span>' : ''}
+                                ${p.price70 ? '<span class="size-tag">70ml</span>' : ''}
+                                ${p.price50 ? '<span class="size-tag">50ml</span>' : ''}
+                                ${refillTag}
+                            </div>
+                            <p class="product-price">${priceDisplay}</p>
+                            <button class="btn-order" onclick="orderProduct('${p.name}', '${p.inspiration}', '${priceDisplay}')">
+                                Poruči via WhatsApp
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <span class="product-brand">Olfazeta</span>
-                        <h3 class="product-name">${p.name}</h3>
-                        <p class="product-price">Cena na upit</p>
-                        <button class="btn-small" onclick="orderProduct('${p.name}')">
-                            Poruči
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
 
             noResults.classList.toggle('show', filtered.length === 0);
             
+            // Animate cards
             setTimeout(() => {
                 document.querySelectorAll('.product-card').forEach((card, index) => {
                     setTimeout(() => {
@@ -1634,9 +2067,9 @@
             }, 50);
         }
 
-        // Order Product
-        function orderProduct(productName) {
-            const message = `Zdravo! Želim da poručim ${productName}. Molim vas za više informacija o ceni i dostupnosti.`;
+        // Order Product via WhatsApp
+        function orderProduct(name, inspiration, price) {
+            const message = `Zdravo! Želim da poručim:\n\n${name}\n(Inspiriran: ${inspiration})\n${price}\n\nMolim vas za informacije o dostupnosti i načinu plaćanja. Hvala!`;
             const whatsappUrl = `https://wa.me/381605415570?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
@@ -1670,8 +2103,6 @@
 
         // Mobile Menu
         function toggleMenu() {
-            alert('Mobile menu - dodajte mobilnu navigaciju po potrebi!');
+            alert('Za mobilni meni, dodajte hamburger meni po potrebi!');
         }
-    </script>
-</body>
-</html>
+</script>
