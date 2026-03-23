@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChoganLuxRS | Olfazeta Parfemi Srbija</title>
-    <meta name="description" content="Luksuzni Chogan Olfazeta parfemi sa 30% esencije. Italijanski kvalitet po dostupnim cenama u Srbiji.">
+    <meta name="description" content="Ovlašćeni distributer Chogan Olfazeta parfema u Srbiji. Luksuzni parfemi sa 30% esencije po dostupnim cenama.">
     <meta property="og:title" content="ChoganLuxRS | Olfazeta Parfemi Srbija">
-    <meta property="og:description" content="Otkrijte svet ekskluzivnih mirisa sa 30% esencije za dugotrajnost do 24 sata.">
-    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:description" content="Ovlašćeni distributer Chogan Olfazeta parfema u Srbiji.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -17,6 +16,7 @@
             --gold-dark: #B8860B;
             --black-deep: #0a0a0a;
             --black-soft: #1a1a1a;
+            --black-card: #111111;
             --white: #ffffff;
             --gray-light: #888888;
             --transition: all 0.3s ease;
@@ -314,94 +314,351 @@
             color: rgba(255,255,255,0.6);
         }
 
-        /* ABOUT SECTION */
-        .about {
-            padding: 120px 5%;
+        /* ABOUT CHOGAN SECTION */
+        .about-chogan {
+            padding: 100px 5%;
             background: var(--black-soft);
         }
 
-        .container {
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .about-grid {
+        .about-card {
+            background: var(--black-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 40px 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-primary), transparent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212,175,55,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .about-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .about-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--gold-primary);
+            margin-bottom: 15px;
+        }
+
+        .about-card p, .about-card li {
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .about-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-card li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .about-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold-primary);
+            font-weight: bold;
+        }
+
+        /* OLFAZETA HIGHLIGHT */
+        .olfazeta-highlight {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--black-deep) 0%, var(--black-soft) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .olfazeta-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .olfazeta-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
         }
 
-        .about-image {
+        .olfazeta-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .olfazeta-text h2 span {
+            color: var(--gold-primary);
+        }
+
+        .olfazeta-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black-deep);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .olfazeta-image {
             position: relative;
         }
 
-        .about-image img {
+        .olfazeta-image img {
             width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 10px;
-            position: relative;
-            z-index: 1;
+            border-radius: 15px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
 
-        .image-frame {
+        .experience-badge {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            right: -20px;
             bottom: -20px;
-            border: 2px solid var(--gold-primary);
-            border-radius: 10px;
-            z-index: 0;
+            left: -20px;
+            background: var(--gold-primary);
+            color: var(--black-deep);
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(212,175,55,0.3);
         }
 
-        .about-content h2 {
+        .experience-badge .number {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .section-label {
+            font-weight: 700;
             display: block;
-            color: var(--gold-primary);
+            line-height: 1;
+        }
+
+        .experience-badge .text {
             font-size: 0.85rem;
-            letter-spacing: 3px;
+            font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            padding: 100px 5%;
+            background: var(--black-soft);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--black-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
             margin-bottom: 15px;
+            overflow: hidden;
+            transition: var(--transition);
         }
 
-        .divider {
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(to right, var(--gold-primary), transparent);
-            margin: 25px 0;
+        .faq-item:hover {
+            border-color: rgba(212,175,55,0.2);
         }
 
-        .about-content p {
-            color: rgba(255,255,255,0.75);
-            margin-bottom: 30px;
-            font-size: 1.05rem;
+        .faq-question {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .faq-question h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--white);
+            padding-right: 20px;
+        }
+
+        .faq-icon {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--gold-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            background: var(--gold-primary);
+            color: var(--black-deep);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px;
+        }
+
+        .faq-answer p {
+            color: rgba(255,255,255,0.7);
             line-height: 1.8;
         }
 
-        .features {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        .faq-answer strong {
+            color: var(--gold-primary);
         }
 
-        .features li {
+        /* CONTACT SECTION */
+        .contact-section {
+            padding: 100px 5%;
+            background: var(--black-deep);
+            position: relative;
+        }
+
+        .contact-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: var(--black-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 15px;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--black-deep);
         }
 
-        .features svg {
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: var(--gray-light);
+            margin-bottom: 5px;
+        }
+
+        .contact-card a {
             color: var(--gold-primary);
-            flex-shrink: 0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-card a:hover {
+            color: var(--gold-light);
         }
 
         /* COLLECTION SECTION */
@@ -709,10 +966,35 @@
             text-decoration: none;
             line-height: 1.8;
             font-size: 0.95rem;
+            display: block;
+            margin-bottom: 8px;
         }
 
         .footer-col a:hover {
             color: var(--gold-primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--gold-primary);
+            color: var(--black-deep);
+            transform: translateY(-3px);
         }
 
         .footer-bottom {
@@ -754,9 +1036,18 @@
                 display: none;
             }
             
-            .about-grid {
+            .olfazeta-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            
+            .olfazeta-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-badge {
+                left: 50%;
+                transform: translateX(-50%);
             }
             
             .collection-header h2 {
@@ -780,6 +1071,10 @@
                 justify-content: center;
             }
             
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
             .filter-buttons {
                 overflow-x: auto;
                 flex-wrap: nowrap;
@@ -789,6 +1084,10 @@
             }
             
             .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -826,9 +1125,10 @@
         <div class="nav-logo">CHOGANLUXRS</div>
         <ul class="nav-links">
             <li><a href="#home">Početna</a></li>
-            <li><a href="#about">O nama</a></li>
-            <li><a href="#collection">Kolekcija</a></li>
-            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#o-nama">O nama</a></li>
+            <li><a href="#olfazeta">Olfazeta</a></li>
+            <li><a href="#kolekcija">Kolekcija</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
         </ul>
         <button class="mobile-menu-btn" onclick="toggleMenu()">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -847,7 +1147,7 @@
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <span class="hero-eyebrow">CHOGANLUXRS PREZENTUJE</span>
+            <span class="hero-eyebrow">OVLAŠĆENI DISTRIBUTER ZA SRBIJU</span>
             <h1 class="hero-title">
                 <span>CHOGAN</span>
                 <span>OLFAZETA</span>
@@ -857,12 +1157,12 @@
                 Luksuz koji miriše na uspeh. Otkrijte svet ekskluzivnih mirisa inspirisanih najpoznatijim svetskim brendovima, kreiranih sa 30% esencije za dugotrajnost koja fascinira.
             </p>
             <div class="hero-buttons">
-                <a href="#collection" class="btn btn-primary">ISTRAŽITE KOLEKCIJU</a>
+                <a href="#kolekcija" class="btn btn-primary">ISTRAŽITE KOLEKCIJU</a>
                 <a href="https://instagram.com/choganluxrs" target="_blank" class="btn btn-outline">ZAPRATITE NAS</a>
             </div>
         </div>
 
-        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+        <div class="scroll-indicator" onclick="document.getElementById('o-nama').scrollIntoView({behavior: 'smooth'})">
             <div class="mouse">
                 <div class="wheel"></div>
             </div>
@@ -870,54 +1170,237 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="https://images.pexels.com/photos/14490637/pexels-photo-14490637.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Luxury Perfume">
-                    <div class="image-frame"></div>
+    <!-- ABOUT CHOGAN SECTION -->
+    <section class="about-chogan" id="o-nama">
+        <div class="section-header">
+            <span class="section-subtitle">ITALIJANSKI LUKSUZ</span>
+            <h2 class="section-title">O Chogan Group</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-top: 15px;">
+                Chogan Group je italijanska kompanija osnovana 2013. godine, specijalizovana za proizvodnju i distribuciju parfema, kozmetike i proizvoda za ličnu negu. Sedište kompanije nalazi se u Italiji, a danas posluje širom Evrope.
+            </p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>🎯 Naša Filozofija</h3>
+                <p>Ideja da luksuz ne mora da bude preskup, već dostupan svima. Visok kvalitet proizvoda po pristupačnim cenama.</p>
+            </div>
+            
+            <div class="about-card">
+                <h3>✨ Zašto Chogan?</h3>
+                <ul>
+                    <li>Proizvodi inspirisani poznatim luksuznim brendovima</li>
+                    <li>Visok procenat parfemskih esencija</li>
+                    <li>Dugotrajnost mirisa</li>
+                    <li>Proizvodnja u Italiji</li>
+                    <li>Kontrola kvaliteta prema EU standardima</li>
+                </ul>
+            </div>
+            
+            <div class="about-card">
+                <h3>📦 Asortiman</h3>
+                <ul>
+                    <li>Parfemi (Olfazeta linija)</li>
+                    <li>Kozmetika za lice i telo</li>
+                    <li>Šamponi i gelovi</li>
+                    <li>Kućna hemija</li>
+                    <li>Dodaci ishrani</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- OLFAZETA HIGHLIGHT -->
+    <section class="olfazeta-highlight" id="olfazeta">
+        <div class="olfazeta-content">
+            <div class="olfazeta-text">
+                <span class="section-subtitle">NAJPOPULARNIJA LINIJA</span>
+                <h2>Šta je <span>Olfazeta?</span></h2>
+                <p style="color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 20px;">
+                    Olfazeta je parfemska linija kompanije Chogan koja predstavlja njihovu najpopularniju kategoriju proizvoda. Radi se o parfemima koji su <strong>inspirisani svetski poznatim mirisima</strong>, napravljeni sa visokim procentom esencije (često 20–30%), poznati po dugotrajnosti i intenzitetu.
+                </p>
+                <p style="color: rgba(255,255,255,0.75); line-height: 1.8;">
+                    <strong>Kako funkcionišu "inspiracije"?</strong> Olfazeta parfemi nisu kopije sa logom drugih brendova, već imaju sopstvenu proizvodnju, prate mirisne note poznatih parfema i nude sličan doživljaj po mnogo nižoj ceni.
+                </p>
+                
+                <div class="olfazeta-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">💎</div>
+                        <div>
+                            <strong>Koncentracija</strong><br>
+                            <small>Eau de Parfum (EDP)</small>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⏰</div>
+                        <div>
+                            <strong>Dugotrajnost</strong><br>
+                            <small>6–12 sati</small>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✨</div>
+                        <div>
+                            <strong>Jak trag</strong><br>
+                            <small>Postojan miris</small>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏺</div>
+                        <div>
+                            <strong>Dizajn</strong><br>
+                            <small>Elegantne bočice</small>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-content">
-                    <span class="section-label">O BRENDU</span>
-                    <h2>Vrhunski Kvalitet Bez Kompromisa</h2>
-                    <div class="divider"></div>
-                    <p>
-                        Chogan Olfazeta parfemi nisu samo mirisi – oni su izraz prestiža. Naša tajna leži u saradnji sa Fragworld-om iz Grasa, svetskom prestonicom parfema. Sa koncentracijom mirisa od 30%, naši parfemi spadaju u kategoriju "Extrait de Parfum", što garantuje intenzitet i postojanost do 24 sata.
-                    </p>
-                    <ul class="features">
-                        <li>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>30% Mirisne Esencije (Extrait de Parfum)</span>
-                        </li>
-                        <li>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Bez Dodate Vode - Čista Esencija</span>
-                        </li>
-                        <li>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Organski Sastojci iz Grasa</span>
-                        </li>
-                        <li>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Postojanost do 24 Sata</span>
-                        </li>
-                    </ul>
+            </div>
+            
+            <div class="olfazeta-image">
+                <img src="https://images.pexels.com/photos/14490637/pexels-photo-14490637.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Olfazeta Parfemi">
+                <div class="experience-badge">
+                    <span class="number">30%</span>
+                    <span class="text">Esencije</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+        <div class="section-header">
+            <span class="section-subtitle">PITANJA I ODGOVORI</span>
+            <h2 class="section-title">Često Postavljana Pitanja</h2>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Da li su Olfazeta parfemi originali ili kopije?</h4>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Olfazeta parfemi su <strong>originalni proizvodi</strong> italijanske kompanije Chogan. Nisu kopije niti falsifikati. Oni su <strong>inspirisani</strong> mirisnim notama poznatih luksuznih parfema, ali imaju sopstvenu formulaciju, brend i proizvodnju. Ne koriste logotipe drugih brendova.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Koliko dugo traje miris na koži?</h4>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Zahvaljujući visokoj koncentraciji esencije od <strong>30%</strong>, Olfazeta parfemi spadaju u kategoriju "Extrait de Parfum". To znači da miris može trajati od <strong>6 do 12 sati</strong> na koži, a na odeći i duže. Dugotrajnost zavisi od tipa kože, aktivnosti i načina nanošenja.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Kako poručiti parfem?</h4>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Parfeme možete poručiti putem:</p>
+                    <p>• <strong>Instagrama:</strong> Pošaljite nam direktnu poruku na @choganluxrs</p>
+                    <p>• <strong>Facebooka:</strong> Kontaktirajte nas na našoj Facebook stranici</p>
+                    <p>• <strong>Emaila:</strong> choganluxrs@gmail.com</p>
+                    <p>• <strong>Telefona:</strong> +381 60 541 5570 (pozivi i WhatsApp)</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Da li vršite dostavu i kako se plaća?</h4>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Da, vršimo dostavu na teritoriji cele Srbije. Pakovanje je diskretno i bezbedno. Plaćanje se vrši <strong>pouzećem</strong> prilikom preuzimanja paketa ili <strong>uplatom na račun</strong> pre slanja. Za narudžbine preko određenog iznosa, dostava je besplatna.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Šta znači "inspirisan" parfemom?</h4>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Kada kažemo da je parfem "inspirisan" nekim poznatim brendom, to znači da su <strong>mirisne note slične</strong> (npr. citrusne, drvene, cvetne), ali je formulacija Chogan-ova. Ne radi se o identičnoj kopiji, već o parfemu koji pruža <strong>sličan osećaj i aromu</strong> po mnogo pristupačnijoj ceni.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Da li su sastojci bezbedni i testirani?</h4>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Apsolutno! Svi Chogan proizvodi se proizvode u <strong>Italiji</strong> pod strogom kontrolom kvaliteta i u skladu sa <strong>EU standardima</strong>. Koriste se visokokvalitetne esencije iz Grasa (Francuska), svetske prestonice parfema. Proizvodi su bezbedni za kožu i ne sadrže štetne hemikalije.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="kontakt">
+        <div class="section-header">
+            <span class="section-subtitle">STUPITE U KONTAKT</span>
+            <h2 class="section-title">Kontaktirajte Nas</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-top: 15px;">
+                Tu smo za sva vaša pitanja. Odaberite najlakši način da nas kontaktirate.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </div>
+                <h3>Email</h3>
+                <p>Pišite nam bilo kada</p>
+                <a href="mailto:choganluxrs@gmail.com">choganluxrs@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <h3>Telefon</h3>
+                <p>Pozivi i WhatsApp</p>
+                <a href="tel:+381605415570">+381 60 541 5570</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </div>
+                <h3>Instagram</h3>
+                <p>Zapratite nas</p>
+                <a href="https://instagram.com/choganluxrs" target="_blank">@choganluxrs</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </div>
+                <h3>Facebook</h3>
+                <p>Pratite stranicu</p>
+                <a href="https://facebook.com/share/14bhobkKQM5/" target="_blank">ChoganLuxRS</a>
+            </div>
+        </div>
+    </section>
+
     <!-- COLLECTION SECTION -->
-    <section class="collection" id="collection">
+    <section class="collection" id="kolekcija">
         <div class="collection-header">
             <video autoplay muted loop playsinline>
                 <source src="https://videos.pexels.com/video-files/8516366/8516366-hd_1080_1920_30fps.mp4" type="video/mp4">
@@ -968,7 +1451,7 @@
     </section>
 
     <!-- INSTAGRAM CTA -->
-    <section class="instagram" id="contact">
+    <section class="instagram">
         <div class="instagram-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -993,23 +1476,52 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h3>CHOGANLUXRS</h3>
-                <p>Vaš ekskluzivni partner za luksuzne parfeme u Srbiji. Originalni Chogan Olfazeta proizvodi sa garancijom kvaliteta.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Kontakt</h3>
-                <p>Email: info@choganluxrs.rs</p>
-                <p>Instagram: @choganluxrs</p>
-                <p>Srbija | Chogan Official Partner</p>
+                <p>Ovlašćeni distributer Chogan Olfazeta parfema u Srbiji. Originalni proizvodi iz Italije sa garancijom kvaliteta.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/choganluxrs" target="_blank" title="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com/share/14bhobkKQM5/" target="_blank" title="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="mailto:choganluxrs@gmail.com" title="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    <a href="tel:+381605415570" title="Telefon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
             <div class="footer-col">
                 <h3>Brzi Linkovi</h3>
-                <p><a href="#home">Početna</a></p>
-                <p><a href="#about">O nama</a></p>
-                <p><a href="#collection">Kolekcija</a></p>
+                <a href="#o-nama">O nama</a>
+                <a href="#olfazeta">O Olfazeta</a>
+                <a href="#faq">FAQ</a>
+                <a href="#kolekcija">Kolekcija</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+            <div class="footer-col">
+                <h3>Kontakt Info</h3>
+                <p>Email: choganluxrs@gmail.com</p>
+                <p>Tel: +381 60 541 5570</p>
+                <p>Instagram: @choganluxrs</p>
+                <p>Facebook: ChoganLuxRS</p>
+                <p>Srbija | Chogan Official Partner</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 ChoganLuxRS. Sva prava zadržana.</p>
+            <p>&copy; 2024 ChoganLuxRS. Sva prava zadržana. | Ovlašćeni distributer Chogan proizvoda za Srbiju.</p>
         </div>
     </footer>
 
@@ -1021,7 +1533,7 @@
             }, 1500);
         });
 
-        // NAVBAR SCROLL EFFECT
+        // NAVBAR SCROLL
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -1031,7 +1543,23 @@
             }
         });
 
-        // PERFUME DATA - REPLACE WITH YOUR 200+ ITEMS
+        // FAQ TOGGLE
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Zatvori sve
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Otvori kliknuti ako nije bio aktivan
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // PERFUME DATA
         const perfumes = [
             { id: 1, name: "Chogan 001 - Inspired by Dior Sauvage", cat: "Standardni Muški", img: "https://images.pexels.com/photos/1961792/pexels-photo-1961792.jpeg?auto=compress&cs=tinysrgb&w=800" },
             { id: 2, name: "Chogan 002 - Inspired by Chanel No. 5", cat: "Standardni Ženski", img: "https://images.pexels.com/photos/1125328/pexels-photo-1125328.jpeg?auto=compress&cs=tinysrgb&w=800" },
@@ -1047,7 +1575,7 @@
             { id: 12, name: "Chogan 012 - Inspired by CK One", cat: "Unisex", img: "https://images.pexels.com/photos/14466498/pexels-photo-14466498.jpeg?auto=compress&cs=tinysrgb&w=800" },
         ];
 
-        // Generate more for demo (remove if you have real data)
+        // Generate more for demo
         const fullList = [];
         for (let i = 0; i < 48; i++) {
             const template = perfumes[i % perfumes.length];
@@ -1085,8 +1613,8 @@
                         <span class="product-brand">Olfazeta</span>
                         <h3 class="product-name">${p.name}</h3>
                         <p class="product-price">Cena na upit</p>
-                        <button class="btn-small" onclick="contactForPrice('${p.name}')">
-                            Detaljnije
+                        <button class="btn-small" onclick="orderProduct('${p.name}')">
+                            Poruči
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
@@ -1097,7 +1625,6 @@
 
             noResults.classList.toggle('show', filtered.length === 0);
             
-            // Animate cards
             setTimeout(() => {
                 document.querySelectorAll('.product-card').forEach((card, index) => {
                     setTimeout(() => {
@@ -1107,10 +1634,11 @@
             }, 50);
         }
 
-        // Contact for price
-        function contactForPrice(productName) {
-            const message = `Zdravo! Zainteresovan sam za ${productName}. Molim vas za više informacija o ceni i dostupnosti.`;
-            window.open(`https://instagram.com/choganluxrs`, '_blank');
+        // Order Product
+        function orderProduct(productName) {
+            const message = `Zdravo! Želim da poručim ${productName}. Molim vas za više informacija o ceni i dostupnosti.`;
+            const whatsappUrl = `https://wa.me/381605415570?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
         }
 
         // Event Listeners
@@ -1140,9 +1668,9 @@
         // Initial Render
         renderProducts();
 
-        // Mobile Menu Toggle
+        // Mobile Menu
         function toggleMenu() {
-            alert('Mobile menu - add your mobile navigation here!');
+            alert('Mobile menu - dodajte mobilnu navigaciju po potrebi!');
         }
     </script>
 </body>
